@@ -1,0 +1,15 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+
+  Enabel\LayoutBundle\Controller\:
+    resource: '../src/Controller'
+    autowire: true
+    autoconfigure: true
+    tags: [ 'controller.service_arguments' ]
+
+  Enabel\LayoutBundle\Twig\Extension\LocalesExtension:
+    arguments:
+      $supportedLocales: '%enabel_layout.supported_locales%'
+    tags: [ 'twig.extension' ]

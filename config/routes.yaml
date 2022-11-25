@@ -1,0 +1,3 @@
+enabel_layout:
+  resource: "../src/Controller/"
+  type: attribute

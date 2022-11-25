@@ -1,0 +1,49 @@
+{# Left side #}
+<ul class="navbar-nav me-auto mb-2 mb-md-0">
+    {# Main Menu #}
+    <li class="nav-item">
+        <a class="nav-link" href="#"><i class="fas fa-home"></i> Home</a>
+    </li>
+</ul>
+
+{# Right side #}
+<ul class="d-flex navbar-nav">
+    {# Extra Menu #}
+    <li class="nav-item">
+        <a href="#" class="nav-link"><i class="fa fa-cogs"></i> Admin</a>
+    </li>
+
+    {# Language Menu #}
+    <li class="nav-item dropdown">
+        <a href="#" class="nav-link dropdown-toggle" id="dropdownLocales" data-bs-toggle="dropdown" aria-expanded="false">
+            {% for locale in locales() %}
+                {% if app.request.locale == locale.code %}
+            <i class="fi fi-{{ locale.icon }}"></i> {{ locale.name|capitalize }}
+                {% endif %}
+            {% endfor %}
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="dropdownLocales">
+            {% for locale in locales() %}
+                <li {% if app.request.locale == locale.code %}aria-checked="true" class="active"{% else %}aria-checked="false"{% endif %} role="menuitem">
+                    <a class="dropdown-item" href="{{ path(app.request.get('_route', 'homepage'), app.request.get('_route_params', [])|merge({_locale: locale.code})) }}"><i class="fi fi-{{ locale.icon }}"></i> {{ locale.name|capitalize }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </li>
+
+    {# User Menu #}
+    <li class="nav-item dropdown">
+        <a href="#" class="nav-link dropdown-toggle" id="dropdownUser" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fas fa-user"></i> John DOE
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="dropdownUser">
+            <li>
+                <a class="dropdown-item" href="#"><i class="fas fa-id-card"></i> Profile</a>
+            </li>
+            <li><hr class="dropdown-divider"></li>
+            <li>
+                <a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </li>
+        </ul>
+    </li>
+</ul>

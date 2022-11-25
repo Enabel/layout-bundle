@@ -36,3 +36,15 @@ return [
     Enabel\LayoutBundle\EnabelLayoutBundle::class => ['all' => true],
 ];
 ```
+
+### Step 3: Import routing configuration
+
+enable the routes by adding it to the list of registered routes
+in the `config/routes.yaml` file of your project:
+
+```yaml
+# config/routes.yaml
+
+enabel_user:
+  resource: "@EnabelLayoutBundle/config/routes.yaml"
+```
