@@ -34,13 +34,14 @@
     {{ include('@EnabelLayout/layout/bs5/_header.html.twig') }}
 {% endblock %}
 
+{% block main %}
 <main class="flex-shrink-0">
-    {% block body %}
-        <div class="container">
-            {% block main %}{% endblock %}
-        </div>
-    {% endblock %}
+    <div class="container">
+        {% block body %}
+        {% endblock %}
+    </div>
 </main>
+{% endblock %}
 
 {% block footer %}
     {{ include('@EnabelLayout/layout/bs5/_footer.html.twig') }}
