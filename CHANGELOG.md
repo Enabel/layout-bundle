@@ -6,6 +6,13 @@ This project respects [Semantic Versioning](https://semver.org/) and [recommenda
 
 ## [Unreleased]
 
+# [1.0.2] - 2022-11-28
+
+### Changed
+
+- Fix routing
+
+
 # [1.0.1] - 2022-11-28
 
 ### Changed
@@ -21,6 +28,7 @@ This project respects [Semantic Versioning](https://semver.org/) and [recommenda
 - Enabel sass style
 - Bundle configuration
 
-[unreleased]: https://github.com/Enabel/layout-bundle/compare/v1.0.1...HEAD
+[unreleased]: https://github.com/Enabel/layout-bundle/compare/v1.0.2...HEAD
+[1.0.2]: https://github.com/Enabel/layout-bundle/compare/v1.0.1...v1.0.2
 [1.0.1]: https://github.com/Enabel/layout-bundle/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/Enabel/layout-bundle/releases/tag/1.0.0
