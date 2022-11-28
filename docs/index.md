@@ -25,7 +25,7 @@ Edit `webpack.config.js` and uncomment/add the following lines:
 ```javascript
 Encore
     // ...
-    .addEntry('layout', './assets/js/enabel.js')
+    .addEntry('enabel', './assets/enabel.js')
     .enableSassLoader()
 ```
 
@@ -111,7 +111,7 @@ Edit `webpack.config.js` and uncomment/add the following lines:
 ```javascript
 Encore
     // ...
-    .addEntry('layout', './assets/js/enabel.js')
+    .addEntry('enabel', './assets/enabel.js')
     .enableSassLoader()
     
 ```
