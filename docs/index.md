@@ -35,6 +35,14 @@ Encore
 yarn encore dev
 ```
 
+### Step 3: Extends the Enabel layout
+
+Replace the content of your base template `templates/base.html.twig` with this:
+
+```twig
+{% extends '@EnabelLayout/layout/bs5/base.html.twig' %}
+```
+
 ## Applications that don't use Symfony Flex
 
 ### Step 1: Download the Bundle
