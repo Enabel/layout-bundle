@@ -3,6 +3,11 @@ services:
     autowire: true
     autoconfigure: true
 
+  Enabel\LayoutBundle\Components\AlertComponent:
+    autowire: true
+    tags:
+      - { name: 'twig.component', key: 'alert' }
+
   Enabel\LayoutBundle\Controller\:
     resource: '../src/Controller'
     autowire: true
