@@ -1,0 +1,29 @@
+{% extends '@EnabelLayout/layout/bs5/base.html.twig' %}
+
+{% block header %}
+{% endblock %}
+{% block footer %}
+{% endblock %}
+
+{% block stylesheets %}
+    {{ encore_entry_link_tags('error') }}
+{% endblock %}
+
+{% block body %}
+
+    <div class="bg">
+        <img src="{{ asset('bundles/enabellayout/images/enabel-symbol.png') }}" alt="enabel-symbol">
+    </div>
+
+    <div id="error">
+        <div class="error">
+            <div class="code-error">
+                <h1>403</h1>
+            </div>
+            <h2>Access denied!</h2>
+            <p>You do not have permission to access this resource.</p>
+            <a class="btn btn-primary" href="/">Back to Homepage</a>
+            <img class ="logo" src="{{ asset('bundles/enabellayout/images/enabel-logo-email.png') }}" alt="enabel-logo">
+        </div>
+    </div>
+{% endblock %}

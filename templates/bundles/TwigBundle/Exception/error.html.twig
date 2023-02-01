@@ -1,0 +1,29 @@
+{% extends '@EnabelLayout/layout/bs5/base.html.twig' %}
+
+{% block header %}
+{% endblock %}
+{% block footer %}
+{% endblock %}
+
+{% block stylesheets %}
+    {{ encore_entry_link_tags('error') }}
+{% endblock %}
+
+{% block body %}
+
+    <div class="bg">
+        <img src="{{ asset('bundles/enabellayout/images/enabel-symbol.png') }}" alt="enabel-symbol">
+    </div>
+
+    <div id="error">
+        <div class="error">
+            <div class="code-error">
+                <h1>{{ status_code }}</h1>
+            </div>
+            <h2>Oops!</h2>
+            <p>Something broke.<br/>Please notify a site administrator of this error, thank you.</p>
+            <small>Server error: {{ status_code }} {{ status_text }}</small>
+            <img class ="logo" src="{{ asset('bundles/enabellayout/images/enabel-logo-email.png') }}" alt="enabel-logo">
+        </div>
+    </div>
+{% endblock %}

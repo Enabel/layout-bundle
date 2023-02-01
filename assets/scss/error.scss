@@ -1,0 +1,113 @@
+@import "@enabel/enabel-bootstrap-theme/dist/scss/variables";
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box
+}
+
+body {
+  padding: 0;
+  margin: 0
+}
+
+.bg {
+  position: fixed;
+  top: -50px;
+  left: -50px;
+  min-width: 100%;
+  min-height: 100%;
+  img {
+    opacity: 0.1;
+    width: 550px;
+    height: 550px;
+  }
+}
+
+#error {
+  position: relative;
+  height: 100vh;
+  .error {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%)
+  }
+}
+
+.error {
+  font-family: maven pro, sans-serif;
+  text-transform: uppercase;
+  max-width: 920px;
+  width: 100%;
+  line-height: 1.4;
+  text-align: center;
+  padding-left: 15px;
+  padding-right: 15px;
+  h2 {
+    font-size: 46px;
+    color: rgb(216, 26, 26);
+    font-weight: 900;
+    margin: 0
+  }
+  p {
+    font-size: 16px;
+    color: #000;
+    font-weight: 400;
+    margin-top: 15px
+  }
+  a {
+    font-size: 14px;
+    text-decoration: none;
+    background: $enabel-primary-red;
+    display: inline-block;
+    padding: 14px 28px;
+    border: 2px solid transparent;
+    border-radius: 20px;
+    color: #fff;
+    font-weight: 400;
+    -webkit-transition: .2s all;
+    transition: .2s all;
+    &:hover {
+      background-color: #fff;
+      border-color: $enabel-primary-red;
+      color: $enabel-primary-red
+    }
+  }
+  .code-error {
+    position: absolute;
+    height: 25%;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+    h1 {
+      color: #ececec;
+      font-weight: 900;
+      font-size: 276px;
+      margin: 0;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%)
+    }
+  }
+  small {
+    position: relative;
+    top: 1em;
+    color: #b0b0b0;
+  }
+  img.logo {
+    display: block;
+    margin: 8rem auto 0 auto;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .code-error h1 {
+    font-size: 162px !important;
+  }
+
+  .error h2 {
+    font-size: 26px !important;
+  }
+}
