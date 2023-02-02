@@ -91,7 +91,8 @@ body {
       transform: translate(-50%, -50%)
     }
   }
-  small {
+  .error-detail {
+    font-size: small;
     position: relative;
     top: 1em;
     color: #b0b0b0;

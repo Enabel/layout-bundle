@@ -1,0 +1,15 @@
+enabel_layout:
+    email:
+        noreply: 'Les réponses à ce e-mail ne seront pas lues.'
+    error:
+        title: 'Oups !'
+        message: "Quelque chose est cassé.\nVeuillez en informer un administrateur du site, merci."
+        details: 'Erreur du serveur : %code% %message%'
+        btn:
+            backhome: "Retour à la page d'accueil"
+        403:
+            title: 'Accès refusé !'
+            message: "Vous n'avez pas la permission d'accéder à cette ressource."
+        404:
+            title: 'Désolé !'
+            message: "La page que vous cherchiez n'existe pas."

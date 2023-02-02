@@ -38,6 +38,7 @@ class LayoutBundleExtension extends Extension implements PrependExtensionInterfa
 
             $twigConfig = [
                 'form_themes' => ['bootstrap_5_layout.html.twig'],
+                'paths' => ['public/bundles/enabellayout/images' => 'EnabelLayoutImages']
             ];
 
             $twigConfig['globals']['enabel_layout'] = [];

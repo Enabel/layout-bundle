@@ -1,0 +1,36 @@
+{% extends '@EnabelLayout/layout/bs5/base.html.twig' %}
+
+{% block header %}
+{% endblock %}
+{% block footer %}
+{% endblock %}
+
+{% block stylesheets %}
+    {{ encore_entry_link_tags('error') }}
+{% endblock %}
+
+{% block body %}
+
+    <div class="bg">
+        <img src="{{ asset('bundles/enabellayout/images/enabel-symbol.png') }}" alt="enabel-symbol">
+    </div>
+
+    <div id="error">
+        <div class="error">
+            <div class="code-error">
+                <h1>{% block error_code %}{{ status_code }}{% endblock %}</h1>
+            </div>
+            <h2>
+                {% block error_title %}
+                    {{ 'enabel_layout.error.title'|trans }}
+                {% endblock %}
+            </h2>
+            <p>{% block error_message %}{{ 'enabel_layout.error.message'|trans|nl2br }}{% endblock %}</p>
+            {% block error_button %}
+                <a class="btn btn-primary" href="{{ btn.homepage|default('/') }}">{{ 'enabel_layout.error.btn.backhome'|trans }}</a>
+            {% endblock %}
+            <small>{%  block error_details %}{{ 'enabel_layout.error.details'|trans({'%code%': status_code, '%message%': status_text)|nl2br}}{% endblock %}</small>
+            <img class ="logo" src="{{ asset('bundles/enabellayout/images/enabel-logo-email.png') }}" alt="enabel-logo">
+        </div>
+    </div>
+{% endblock %}

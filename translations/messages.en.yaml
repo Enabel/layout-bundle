@@ -1,0 +1,15 @@
+enabel_layout:
+    email:
+        noreply: 'Responses to this e-mail will not be read.'
+    error:
+        title: 'Oops!'
+        message: "Something broke.\nPlease notify a site administrator of this error, thank you."
+        details: 'Server error: %code% %message%'
+        btn:
+            backhome: 'Back to Homepage'
+        403:
+            title: 'Access denied!'
+            message: 'You do not have permission to access this resource.'
+        404:
+            title: 'Sorry!'
+            message: "The page you were looking for doesn't exist."
