@@ -29,7 +29,7 @@
             {% block error_button %}
                 <a class="btn btn-primary" href="{{ btn.homepage|default('/') }}">{{ 'enabel_layout.error.btn.backhome'|trans }}</a>
             {% endblock %}
-            <small>{%  block error_details %}{{ 'enabel_layout.error.details'|trans({'%code%': status_code, '%message%': status_text)|nl2br}}{% endblock %}</small>
+            <small>{%  block error_details %}{{ 'enabel_layout.error.details'|trans({'%code%': status_code, '%message%': status_text})|nl2br}}{% endblock %}</small>
             <img class ="logo" src="{{ asset('bundles/enabellayout/images/enabel-logo-email.png') }}" alt="enabel-logo">
         </div>
     </div>
