@@ -1,8 +1,7 @@
 @import "@enabel/enabel-bootstrap-theme/dist/scss/variables";
 
 * {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box
+  box-sizing: border-box;
 }
 
 body {
@@ -16,6 +15,7 @@ body {
   left: -50px;
   min-width: 100%;
   min-height: 100%;
+
   img {
     opacity: 0.1;
     width: 550px;
@@ -23,19 +23,8 @@ body {
   }
 }
 
-#error {
-  position: relative;
-  height: 100vh;
-  .error {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%)
-  }
-}
-
 .error {
-  font-family: maven pro, sans-serif;
+  font-family: 'maven pro', sans-serif;
   text-transform: uppercase;
   max-width: 920px;
   width: 100%;
@@ -43,18 +32,21 @@ body {
   text-align: center;
   padding-left: 15px;
   padding-right: 15px;
+
   h2 {
     font-size: 46px;
-    color: rgb(216, 26, 26);
+    color: $enabel-primary-red;
     font-weight: 900;
     margin: 0
   }
+
   p {
     font-size: 16px;
     color: #000;
     font-weight: 400;
     margin-top: 15px
   }
+
   a {
     font-size: 14px;
     text-decoration: none;
@@ -65,14 +57,15 @@ body {
     border-radius: 20px;
     color: #fff;
     font-weight: 400;
-    -webkit-transition: .2s all;
     transition: .2s all;
+
     &:hover {
       background-color: #fff;
       border-color: $enabel-primary-red;
       color: $enabel-primary-red
     }
   }
+
   .code-error {
     position: absolute;
     height: 25%;
@@ -80,6 +73,7 @@ body {
     left: 50%;
     transform: translateX(-50%);
     z-index: -1;
+
     h1 {
       color: #ececec;
       font-weight: 900;
@@ -91,15 +85,30 @@ body {
       transform: translate(-50%, -50%)
     }
   }
+
   .error-detail {
     font-size: small;
     position: relative;
     top: 1em;
     color: #b0b0b0;
   }
+
   img.logo {
     display: block;
-    margin: 8rem auto 0 auto;
+    margin: 8rem auto 0;
+  }
+}
+
+
+#error {
+  position: relative;
+  height: 100vh;
+
+  .error {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%)
   }
 }
 

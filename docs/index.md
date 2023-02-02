@@ -17,7 +17,7 @@ composer require enabel/layout-bundle
 Install the JavaScript dependencies by running:
 
 ```bash
-yarn add @enabel/enabel-bootstrap-theme
+yarn add $(cat vendor/enabel/layout-bundle/requirements.txt)
 ```
 
 Edit `webpack.config.js` and uncomment/add the following lines:
@@ -26,7 +26,9 @@ Edit `webpack.config.js` and uncomment/add the following lines:
 Encore
     // ...
     .addEntry('enabel', './assets/enabel.js')
+    .addStyleEntry('error', './assets/styles/error.scss')
     .enableSassLoader()
+    .enablePostCssLoader()
 ```
 
 ### Step 2: Build assets
@@ -95,15 +97,19 @@ enabel_user:
 
 ### Step 5: Create the js/sass configuration
 
-Copy the javascript file `vendor/enabel/layout-bundle/assets/enabel.js` to `assets/enabel.js`
-And do the same with the sass theme file `vendor/enabel/layout-bundle/assets/styles/enabel.scss` to `assets/styles/enabel.scss`
+Copy the javascript/sass/configuration files:
+- `vendor/enabel/layout-bundle/assets/enabel.js` to `assets/enabel.js`
+- `vendor/enabel/layout-bundle/assets/styles/enabel.scss` to `assets/styles/enabel.scss`
+- `vendor/enabel/layout-bundle/assets/styles/error.scss` to `assets/styles/error.scss`
+- `vendor/enabel/layout-bundle/postcss.config.js` to `postcss.config.js`
+- `vendor/enabel/layout-bundle/.browserslistrc` to `.browserslistrc`
 
 ### Step 6: JavaScript dependencies & webpack configuration
 
 Install the JavaScript dependencies by running:
 
 ```bash
-yarn add @enabel/enabel-bootstrap-theme
+yarn add $(cat vendor/enabel/layout-bundle/requirements.txt)
 ```
 
 Edit `webpack.config.js` and uncomment/add the following lines:
@@ -112,8 +118,9 @@ Edit `webpack.config.js` and uncomment/add the following lines:
 Encore
     // ...
     .addEntry('enabel', './assets/enabel.js')
+    .addStyleEntry('error', './assets/styles/error.scss')
     .enableSassLoader()
-    
+    .enablePostCssLoader()    
 ```
 
 ### Step 7: Build assets
