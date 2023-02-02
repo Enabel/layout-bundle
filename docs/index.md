@@ -26,7 +26,7 @@ Edit `webpack.config.js` and uncomment/add the following lines:
 Encore
     // ...
     .addEntry('enabel', './assets/enabel.js')
-    .addStyleEntry('error', './assets/styles/error.scss')
+    .addStyleEntry('error', './assets/scss/error.scss')
     .enableSassLoader()
     .enablePostCssLoader()
 ```
@@ -99,8 +99,8 @@ enabel_user:
 
 Copy the javascript/sass/configuration files:
 - `vendor/enabel/layout-bundle/assets/enabel.js` to `assets/enabel.js`
-- `vendor/enabel/layout-bundle/assets/styles/enabel.scss` to `assets/styles/enabel.scss`
-- `vendor/enabel/layout-bundle/assets/styles/error.scss` to `assets/styles/error.scss`
+- `vendor/enabel/layout-bundle/assets/scss/enabel.scss` to `assets/scss/enabel.scss`
+- `vendor/enabel/layout-bundle/assets/scss/error.scss` to `assets/scss/error.scss`
 - `vendor/enabel/layout-bundle/postcss.config.js` to `postcss.config.js`
 - `vendor/enabel/layout-bundle/.browserslistrc` to `.browserslistrc`
 
@@ -118,7 +118,7 @@ Edit `webpack.config.js` and uncomment/add the following lines:
 Encore
     // ...
     .addEntry('enabel', './assets/enabel.js')
-    .addStyleEntry('error', './assets/styles/error.scss')
+    .addStyleEntry('error', './assets/scss/error.scss')
     .enableSassLoader()
     .enablePostCssLoader()    
 ```
