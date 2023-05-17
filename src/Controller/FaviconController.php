@@ -10,6 +10,7 @@ use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 
 #[Route(path: '/favicon', name: 'enabel_layout_favicon_')]
 class FaviconController extends AbstractController
@@ -36,6 +37,7 @@ class FaviconController extends AbstractController
             ],
             'theme_color' => '#ffffff',
             'background_color' => '#ffffff',
+            'start_url' => $this->generateUrl('homepage', [], UrlGeneratorInterface::ABSOLUTE_URL),
             'display' => 'standalone',
         ]);
     }
