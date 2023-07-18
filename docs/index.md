@@ -4,7 +4,31 @@ Make sure Composer is installed globally, as explained in the
 [installation chapter](https://getcomposer.org/doc/00-intro.md)
 of the Composer documentation.
 
+<details>
+  <summary>Applications that use Symfony Flex</summary>
+
 ## Applications that use Symfony Flex
+
+### Step 0: Add our recipes endpoint
+
+Add this in your composer.json:
+
+```json
+{
+  "extra": {
+    "symfony": {
+      "endpoint": [
+        "https://api.github.com/repos/Enabel/recipes/contents/index.json?ref=flex/main",
+        "flex://defaults"
+      ],
+      "allow-contrib": true
+    }
+  }
+}
+```
+**Don't forget to run `compose update` as you have just modified his configuration.**
+
+### Step 1: Download the Bundle
 
 Open a command console, enter your project directory and execute:
 
@@ -12,7 +36,7 @@ Open a command console, enter your project directory and execute:
 composer require enabel/layout-bundle
 ```
 
-### Step 1: JavaScript dependencies & webpack configuration
+### Step 2: JavaScript dependencies & webpack configuration
 
 Install the JavaScript dependencies by running:
 
@@ -31,19 +55,16 @@ Encore
     .enablePostCssLoader()
 ```
 
-### Step 2: Build assets
+### Step 3: Build assets
 
 ```bash
 yarn encore dev
 ```
 
-### Step 3: Extends the Enabel layout
+</details>
 
-Replace the content of your base template `templates/base.html.twig` with this:
-
-```twig
-{% extends '@EnabelLayout/layout/bs5/base.html.twig' %}
-```
+<details>
+  <summary>Applications that don't use Symfony Flex</summary>
 
 ## Applications that don't use Symfony Flex
 
@@ -129,10 +150,100 @@ Encore
 yarn encore dev
 ```
 
-### Step 8: Extends the Enabel layout
+</details>
+
+# Usage
+
+## Extends the Enabel layout
 
 In your base template `templates/base.html.twig`:
 
 ```twig
 {% extends '@EnabelLayout/layout/bs5/base.html.twig' %}
+```
+
+## Override the navbar menu
+
+You need to override the `menu` block in your base template `templates/base.html.twig`:
+    
+```twig
+{% extends '@EnabelLayout/layout/bs5/base.html.twig' %}
+
+{# Override the menu block #}
+{% block menu %}
+    {# Left side #}
+    <ul class="navbar-nav me-auto mb-2 mb-md-0">
+        {# Main Menu #}
+        <li class="nav-item">
+            <a class="nav-link" href="{{ path('app_home') }}"><i class="fas fa-home"></i> Home</a>
+        </li>
+    </ul>
+    
+    {# Right side #}
+    <ul class="navbar-nav mb-2 mb-md-0">
+        {# Theme & Locale Switch #}
+        {{ component('theme-switch') }}
+        {{ component('locale-switch') }}
+
+        {# User Menu #}
+        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="userMenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fas fa-user"></i> {{ app.user.displayName }}
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userMenu">
+                    <li><a class="dropdown-item" href="{{ path('enabel_logout') }}"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                </ul>
+            </li>
+        {% else %}
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('enabel_login') }}"><i class="fas fa-sign-in-alt"></i> Login</a>
+            </li>
+        {% endif %}
+        
+    </ul>
+{% endblock %}
+```
+
+## Our twig components
+
+### Alert messages
+
+Show an alert message with a content and style, by default the style is `success`.
+
+```twig
+    {{ component('alert', {message: 'Content of the message'}) }}
+```
+
+You can change the style by passing the `alertType` option:
+
+```twig
+    {{ component('alert', {alertType: 'error', message: 'Content of the error message'}) }}
+    {{ component('alert', {alertType: 'info', message: 'Content of the info message'}) }}
+    {{ component('alert', {alertType: 'warning', message: 'Content of the warning message'}) }}
+    {{ component('alert', {alertType: 'success', message: 'Content of the success message'}) }}
+    {{ component('alert', {alertType: 'danger', message: 'Content of the danger message'}) }}
+```
+
+### Theme switch in navbar
+
+Show a theme switcher to choose between light and dark theme
+
+```twig
+    {{ component('theme-switch') }}
+```
+
+### Language switch in navbar
+
+By default, the language switcher will display the language name in the current locale and redirect to the current route.
+
+```twig
+    {{ component('locale-switch') }}
+```
+
+You can change the route name and/or hide the language name by passing options:
+
+```twig
+    {{ component('locale-switch', {routeName: 'homepage'}) }}
+    {{ component('locale-switch', {routeName: 'homepage', showName: false}) }}
 ```

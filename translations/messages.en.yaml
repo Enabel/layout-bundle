@@ -13,3 +13,6 @@ enabel_layout:
         404:
             title: 'Sorry!'
             message: "The page you were looking for doesn't exist."
+    theme:
+        light: 'Light'
+        dark: 'Dark'

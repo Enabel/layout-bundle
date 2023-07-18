@@ -8,6 +8,16 @@ services:
     tags:
       - { name: 'twig.component', key: 'alert' }
 
+  Enabel\LayoutBundle\Components\ThemeSwitchComponent:
+    autowire: true
+    tags:
+      - { name: 'twig.component', key: 'theme-switch' }
+
+  Enabel\LayoutBundle\Components\LocaleSwitchComponent:
+    autowire: true
+    tags:
+      - { name: 'twig.component', key: 'locale-switch' }
+
   Enabel\LayoutBundle\Controller\:
     resource: '../src/Controller'
     autowire: true

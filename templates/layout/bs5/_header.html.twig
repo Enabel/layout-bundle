@@ -4,8 +4,8 @@
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
                 {% block navbar_brand %}
-                <img src="{{ asset('bundles/enabellayout/images/enabel-logo.png') }}" alt="{{ enabel_layout.application_name|trans }}" width="36px"/>
-                {{ enabel_layout.application_short_name|trans }}
+                    <img src="{{ asset('bundles/enabellayout/images/enabel-logo.png') }}" alt="{{ enabel_layout.application_name|trans }}" width="36px"/>
+                    {{ enabel_layout.application_short_name|trans }}
                 {% endblock %}
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -13,7 +13,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 {% block menu %}
-                {{ include('@EnabelLayout/layout/bs5/_menu.html.twig') }}
+                    {{ include('@EnabelLayout/layout/bs5/_menu.html.twig') }}
                 {% endblock %}
             </div>
         </div>

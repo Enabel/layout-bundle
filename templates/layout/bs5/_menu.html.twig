@@ -13,23 +13,9 @@
         <a href="#" class="nav-link"><i class="fa fa-cogs"></i> Admin</a>
     </li>
 
-    {# Language Menu #}
-    <li class="nav-item dropdown">
-        <a href="#" class="nav-link dropdown-toggle" id="dropdownLocales" data-bs-toggle="dropdown" aria-expanded="false">
-            {% for locale in locales() %}
-                {% if app.request.locale == locale.code %}
-            <i class="fi fi-{{ locale.icon }}"></i> {{ locale.name|capitalize }}
-                {% endif %}
-            {% endfor %}
-        </a>
-        <ul class="dropdown-menu" aria-labelledby="dropdownLocales">
-            {% for locale in locales() %}
-                <li {% if app.request.locale == locale.code %}aria-checked="true" class="active"{% else %}aria-checked="false"{% endif %} role="menuitem">
-                    <a class="dropdown-item" href="{{ path(app.request.get('_route', 'homepage'), app.request.get('_route_params', [])|merge({_locale: locale.code})) }}"><i class="fi fi-{{ locale.icon }}"></i> {{ locale.name|capitalize }}</a>
-                </li>
-            {% endfor %}
-        </ul>
-    </li>
+    {{ component('theme-switch') }}
+
+    {{ component('locale-switch') }}
 
     {# User Menu #}
     <li class="nav-item dropdown">
