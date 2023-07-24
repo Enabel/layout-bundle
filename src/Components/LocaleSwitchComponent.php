@@ -35,7 +35,6 @@ class LocaleSwitchComponent
         $resolver->setDefaults(['showName' => true]);
         $resolver->setAllowedTypes('showName', 'bool');
 
-
         return $resolver->resolve($data);
     }
 
@@ -45,33 +44,21 @@ class LocaleSwitchComponent
         $this->setShowName($showName);
     }
 
-    /**
-     * @return string
-     */
     public function getRouteName(): string
     {
         return $this->routeName;
     }
 
-    /**
-     * @param string $routeName
-     */
     public function setRouteName(string $routeName): void
     {
         $this->routeName = $routeName;
     }
 
-    /**
-     * @return bool
-     */
     public function isShowName(): bool
     {
         return $this->showName;
     }
 
-    /**
-     * @param bool $showName
-     */
     public function setShowName(bool $showName): void
     {
         $this->showName = $showName;

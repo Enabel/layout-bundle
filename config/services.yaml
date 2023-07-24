@@ -18,6 +18,11 @@ services:
     tags:
       - { name: 'twig.component', key: 'locale-switch' }
 
+  Enabel\LayoutBundle\Components\UserMenuComponent:
+    autowire: true
+    tags:
+      - { name: 'twig.component', key: 'user-menu' }
+
   Enabel\LayoutBundle\Controller\:
     resource: '../src/Controller'
     autowire: true

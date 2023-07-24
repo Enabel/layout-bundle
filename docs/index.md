@@ -247,3 +247,40 @@ You can change the route name and/or hide the language name by passing options:
     {{ component('locale-switch', {routeName: 'homepage'}) }}
     {{ component('locale-switch', {routeName: 'homepage', showName: false}) }}
 ```
+
+### Theme switch in navbar
+
+Show a theme switcher to choose between light and dark theme
+
+```twig
+    {{ component('theme-switch') }}
+```
+
+### User menu in navbar
+
+By default, the user menu will display the user and a logout link if the user is authenticated, and a login link if not.
+Login and logout routes are required.
+
+```twig
+    {{ component('user-menu', {loginRoute: 'enabel_login', logoutRoute: 'enabel_logout'}) }}
+```
+You can add some actions to the user menu by passing an array of actions:
+
+```twig
+    {{ component('user-menu', {
+            loginRoute: 'enabel_login',
+            logoutRoute: 'enabel_logout',
+            actions: [
+                {
+                    icon: 'id-card',
+                    label: 'app.menu.profile'|trans,
+                    url: path('app_user_profile')
+                },
+                {
+                    icon: 'screwdriver-wrench',
+                    label: 'app.menu.admin'|trans,
+                    url: path('admin')
+                }
+            ]
+    }) }}
+```

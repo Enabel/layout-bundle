@@ -1,0 +1,30 @@
+{# User Menu #}
+{% set login = '#' %}
+{% set logout = '#' %}
+{% if loginRoute is not empty %}
+    {% set login = path(loginRoute) %}
+{% endif %}
+{% if logoutRoute is not empty %}
+    {% set logout = path(logoutRoute) %}
+{% endif %}
+
+{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="userMenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fas fa-user"></i> {{ app.user.displayName }}
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userMenu">
+            {% if actions is not empty %}
+                {% for action in actions %}
+                    <li><a class="dropdown-item" href="{{ action.url }}"><i class="fas fa-{{ action.icon }}"></i> {{ action.label }}</a></li>
+                {% endfor %}
+                <li><hr class="dropdown-divider"></li>
+            {% endif %}
+            <li><a class="dropdown-item" href="{{ logout }}"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+        </ul>
+    </li>
+{% else %}
+    <li class="nav-item">
+        <a class="nav-link" href="{{ login }}"><i class="fas fa-sign-in-alt"></i> Login</a>
+    </li>
+{% endif %}
