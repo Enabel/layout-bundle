@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.18](https://github.com/enabel/layout-bundle/tree/1.0.18) (2024-01-11)
+
+[Full Changelog](https://github.com/enabel/layout-bundle/compare/1.0.17...1.0.18)
+
+**Merged pull requests:**
+
+- Change route type to attribute [\#4](https://github.com/Enabel/layout-bundle/pull/4) ([gerryvdm](https://github.com/gerryvdm))
+
 ## [1.0.17](https://github.com/enabel/layout-bundle/tree/1.0.17) (2024-01-09)
 
 [Full Changelog](https://github.com/enabel/layout-bundle/compare/1.0.16...1.0.17)
