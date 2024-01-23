@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.0.19](https://github.com/enabel/layout-bundle/tree/1.0.19) (2024-01-23)
+
+[Full Changelog](https://github.com/enabel/layout-bundle/compare/1.0.18...1.0.19)
+
 ## [1.0.18](https://github.com/enabel/layout-bundle/tree/1.0.18) (2024-01-11)
 
 [Full Changelog](https://github.com/enabel/layout-bundle/compare/1.0.17...1.0.18)

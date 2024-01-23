@@ -1,6 +1,7 @@
 # Enabel: Layout Bundle
 
 [![License](https://img.shields.io/badge/license-MIT-red.svg?style=flat-square)](LICENSE)
+[![SymfonyInsight](https://insight.symfony.com/projects/cc5c511d-1ce0-480b-af3f-38e9635f2a14/mini.svg)](https://insight.symfony.com/projects/cc5c511d-1ce0-480b-af3f-38e9635f2a14)
 
 ## Introduction
 
