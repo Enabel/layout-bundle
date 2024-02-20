@@ -40,5 +40,6 @@ class EnabelLayoutBundleTestingKernel extends Kernel
     private function configureRoutes(RoutingConfigurator $routes): void
     {
         $routes->import(__DIR__ . '/../config/routes.yaml');
+        $routes->add('homepage', 'https://google.be');
     }
 }

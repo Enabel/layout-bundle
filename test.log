@@ -1,0 +1,34 @@
+PHPUnit 9.6.16 by Sebastian Bergmann and contributors.
+
+Testing 
+[4mBrowserconfig Action (Enabel\LayoutBundle\Tests\Controller\Favicon\BrowserconfigAction)[0m
+ [32m✔[0m Browserconfig route name
+ [32m✔[0m Browserconfig route uri
+ [32m✔[0m Browserconfig route return valid xml
+
+[4mWebmanifest Action (Enabel\LayoutBundle\Tests\Controller\Favicon\WebmanifestAction)[0m
+ [32m✔[0m Webmanifest route name
+ [32m✔[0m Webmanifest route uri
+ [32m✔[0m Webmanifest route return valid json
+
+[4mEnabel Layout Bundle (Enabel\LayoutBundle\Tests\EnabelLayoutBundle)[0m
+ [32m✔[0m Get path
+
+[4mLocales Extension (Enabel\LayoutBundle\Tests\Twig\Extension\LocalesExtension)[0m
+ [32m✔[0m Get functions
+ [32m✔[0m Get locales default
+ [32m✔[0m Get locales
+ [32m✔[0m Locales icon mutation
+
+Time: 00:00.261, Memory: 32.00 MB
+
+[30;42mOK (11 tests, 29 assertions)[0m
+
+Remaining indirect deprecation notices (4)
+
+  2x: Since symfony/framework-bundle 6.4: Not setting the "framework.handle_all_throwables" config option is deprecated. It will default to "true" in 7.0.
+    2x in BrowserconfigActionTest::setUp from Enabel\LayoutBundle\Tests\Controller\Favicon
+
+  2x: Since symfony/framework-bundle 6.4: Not setting the "framework.php_errors.log" config option is deprecated. It will default to "true" in 7.0.
+    2x in BrowserconfigActionTest::setUp from Enabel\LayoutBundle\Tests\Controller\Favicon
+

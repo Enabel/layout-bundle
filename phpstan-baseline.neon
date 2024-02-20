@@ -9,8 +9,3 @@ parameters:
 			message: "#^Method Enabel\\\\LayoutBundle\\\\Tests\\\\EnabelLayoutBundleTestingKernel\\:\\:configureRoutes\\(\\) is unused\\.$#"
 			count: 1
 			path: tests/EnabelLayoutBundleTestingKernel.php
-
-		-
-			message: "#^Parameter \\#2 \\$array of static method PHPUnit\\\\Framework\\\\Assert\\:\\:assertArrayHasKey\\(\\) expects array\\|ArrayAccess, mixed given\\.$#"
-			count: 1
-			path: tests/Controller/FaviconControllerTest.php
