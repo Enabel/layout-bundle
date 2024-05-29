@@ -4,7 +4,10 @@ includes:
   - phpstan-baseline.neon
 parameters:
     level: 9
-    checkGenericClassInNonGenericObjectType: false
+    ignoreErrors:
+        -
+            identifier: missingType.generics
+            reportUnmatched: false
     paths:
         - src
         - tests

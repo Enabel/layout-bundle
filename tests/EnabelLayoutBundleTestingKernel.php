@@ -33,6 +33,11 @@ class EnabelLayoutBundleTestingKernel extends Kernel
             'secret' => 'S3CRET',
             'test'   => true,
             'http_method_override' => false,
+            'handle_all_throwables' => true,
+            'php_errors' => [
+                'log' => true,
+                'throw' => true,
+            ],
         ]);
         $container->services()->set('logger', NullLogger::class);
     }

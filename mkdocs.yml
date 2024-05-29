@@ -1,0 +1,24 @@
+site_name: enabel/layout-bundle
+site_description: Enabel Symfony Layout
+
+repo_name: enabel/layout-bundle
+repo_url: https://github.com/Enabel/layout-bundle
+edit_uri: https://github.com/Enabel/layout-bundle/edit/main/docs/
+
+theme:
+  name: readthedocs
+  language: en
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/enabel/layout-bundle
+      name: enabel/layout-bundle repository
+  generator: false
+
+plugins:
+  - search: { }
+
+nav:
+  - Installation: 'index.md'
+  - 'Bug tracker': 'https://github.com/Enabel/layout-bundle/issues'

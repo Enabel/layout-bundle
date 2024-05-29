@@ -9,8 +9,17 @@
     </include>
     <exclude>
       <directory>./tests</directory>
+      <directory>./var</directory>
       <directory>./vendor</directory>
+      <file>./phpinsights.php</file>
     </exclude>
+    <report>
+      <html outputDirectory="coverage/report" lowUpperBound="35" highLowerBound="60"/>
+      <text outputFile="php://stdout" showUncoveredFiles="true" showOnlySummary="true"/>
+      <clover outputFile="coverage/clover.xml"/>
+      <cobertura outputFile="coverage/cobertura.xml"/>
+      <crap4j outputFile="coverage/crap4j.xml" />
+    </report>
   </coverage>
   <testsuites>
     <testsuite name="EnabelBundle test suite">

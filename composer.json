@@ -54,8 +54,8 @@
         }
     },
     "scripts": {
-        "cs": "vendor/bin/phpcs --standard=PSR12 --parallel=4 --ignore=vendor,var .",
-        "cs-fix": "vendor/bin/phpcbf --standard=PSR12 --parallel=4 --ignore=vendor,var .",
+        "cs": "vendor/bin/phpcs --standard=PSR12 --parallel=4 --ignore=vendor,var,coverage .",
+        "cs-fix": "vendor/bin/phpcbf --standard=PSR12 --parallel=4 --ignore=vendor,var,coverage .",
         "fix": [
             "@cs-fix",
             "@insight-fix"
