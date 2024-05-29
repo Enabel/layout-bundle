@@ -1,8 +1,16 @@
 # Changelog
 
-## [1.0.19](https://github.com/enabel/layout-bundle/tree/1.0.19) (2024-01-23)
+## [1.0.20](https://github.com/enabel/layout-bundle/tree/1.0.17) (2024-05-29)
+
+[Full Changelog](https://github.com/enabel/layout-bundle/compare/1.0.19...1.0.20)
+
+## [1.0.19](https://github.com/enabel/layout-bundle/tree/1.0.19) (2024-04-19)
 
 [Full Changelog](https://github.com/enabel/layout-bundle/compare/1.0.18...1.0.19)
+
+**Merged pull requests:**
+
+- Update error.scss [\#5](https://github.com/Enabel/layout-bundle/pull/5) ([falcohb](https://github.com/falcohb))
 
 ## [1.0.18](https://github.com/enabel/layout-bundle/tree/1.0.18) (2024-01-11)
 
