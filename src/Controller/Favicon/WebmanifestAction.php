@@ -30,7 +30,7 @@ class WebmanifestAction extends AbstractController
                 'short_name' => $parameterBag->get('enabel_layout.application_short_name'),
                 'description' => $parameterBag->get('enabel_layout.application_description'),
                 'icon' => $assetPackage->getUrl('bundles/enabellayout/favicon/android-chrome-192x192.png'),
-                'url' => $this->generateUrl('homepage', [], UrlGeneratorInterface::ABSOLUTE_URL),
+                'url' => $this->generateUrl('app_home', [], UrlGeneratorInterface::ABSOLUTE_URL),
             ],
         ]);
     }
