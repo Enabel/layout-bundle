@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a4a6b7b7bff393b7df799d281579d0c7",
+    "content-hash": "2f1f8dade2b724d9ba736d711feb21bd",
     "packages": [
         {
             "name": "composer/semver",
@@ -86,43 +86,6 @@
                 }
             ],
             "time": "2023-08-31T09:50:34+00:00"
-        },
-        {
-            "name": "enabel/enabel-bootstrap-theme",
-            "version": "2.0.17",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Enabel/enabel-bootstrap-theme.git",
-                "reference": "0ab62cbe3b88b169501fb58099040aef0ced8c54"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Enabel/enabel-bootstrap-theme/zipball/0ab62cbe3b88b169501fb58099040aef0ced8c54",
-                "reference": "0ab62cbe3b88b169501fb58099040aef0ced8c54",
-                "shasum": ""
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Enabel\\EnabelBootstrapTheme\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Damien Lagae",
-                    "email": "damien.lagae@enabel.be"
-                }
-            ],
-            "description": "Enabel Bootstrap theme for internal use",
-            "support": {
-                "issues": "https://github.com/Enabel/enabel-bootstrap-theme/issues",
-                "source": "https://github.com/Enabel/enabel-bootstrap-theme/tree/2.0.17"
-            },
-            "time": "2024-05-07T08:31:10+00:00"
         },
         {
             "name": "psr/cache",
