@@ -17,6 +17,22 @@ The bundle aims to provide basics layout and helper, including:
 
 You can check docs [here](docs/index.md)
 
+Using Symfony Flex, don't forget to add the recipes endpoint:
+
+```json
+{
+  "extra": {
+    "symfony": {
+      "endpoint": [
+        "https://api.github.com/repos/Enabel/recipes/contents/index.json?ref=flex/main",
+        "flex://defaults"
+      ],
+      "allow-contrib": true
+    }
+  }
+}
+```
+
 ## Versions & dependencies
 
 The current version of the bundle works with Symfony 6.0+.
