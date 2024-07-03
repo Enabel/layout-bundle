@@ -23,11 +23,13 @@
     <meta name="theme-color" content="#ffffff">
     {# End favicon section #}
     {% endblock %}
+
     {% block stylesheets %}
-        {{ encore_entry_link_tags('enabel') }}
+        <link rel="stylesheet" href="{{ asset('styles/app.scss') }}">
     {% endblock %}
+
     {% block javascripts %}
-        {{ encore_entry_script_tags('enabel') }}
+        {% block importmap %}{{ importmap('app') }}{% endblock %}
     {% endblock %}
 </head>
 

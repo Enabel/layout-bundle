@@ -36,29 +36,56 @@ Open a command console, enter your project directory and execute:
 composer require enabel/layout-bundle
 ```
 
-### Step 2: JavaScript dependencies & webpack configuration
+### Step 2: Dependencies & configuration
 
-Install the JavaScript dependencies by running:
+Install the dependencies with AssetMapper by running the following commands:
+
+> [!NOTE]
+> 
+> If you are not using Symfony CLI, replace symfony console with bin/console in the following commands.
+
 
 ```bash
-yarn add $(cat vendor/enabel/layout-bundle/requirements.txt)
+symfony console importmap:require @enabel/enabel-bootstrap-theme
+symfony console importmap:require @enabel/enabel-bootstrap-theme/dist/css/enabel-bootstrap-theme.min.css
+symfony console importmap:require @enabel/enabel-bootstrap-theme/dist/css/variables.min.css
+symfony console importmap:require @enabel/enabel-bootstrap-theme/dist/css/error.min.css
+symfony console importmap:require @enabel/enabel-bootstrap-theme/dist/js/enabel-bootstrap-theme.min
+symfony console importmap:require @fontsource-variable/maven-pro/index.min.css
 ```
 
-Edit `webpack.config.js` and uncomment/add the following lines:
+Edit `assets/app.js` and remove the content above the instruction:
 
 ```javascript
-Encore
-    // ...
-    .addEntry('enabel', './assets/enabel.js')
-    .addStyleEntry('error', './assets/scss/error.scss')
-    .enableSassLoader()
-    .enablePostCssLoader()
+import './bootstrap.js';
+/*
+ * Welcome to your app's main JavaScript file!
+ *
+ * This file will be included onto the page via the importmap() Twig function,
+ * which should already be in your base.html.twig.
+ */
+import './styles/app.css';
+
+console.log('This log comes from assets/app.js - welcome to AssetMapper! 🎉');
+
+/** Remove content above this line */
+import './bootstrap.js';
+import '@enabel/enabel-bootstrap-theme/dist/css/enabel-bootstrap-theme.min.css'
+import '@enabel/enabel-bootstrap-theme/dist/css/variables.min.css'
+import '@enabel/enabel-bootstrap-theme/dist/css/error.min.css'
+import '@enabel/enabel-bootstrap-theme/dist/js/enabel-bootstrap-theme.min'
+import '@fontsource-variable/maven-pro/index.min.css';
+import './styles/app.scss';
 ```
 
 ### Step 3: Build assets
 
+> [!NOTE]
+>
+> If you are not using Symfony CLI, replace symfony console with bin/console in the following commands.
+
 ```bash
-yarn encore dev
+symfony console sass:build --watch
 ```
 
 </details>
@@ -118,36 +145,35 @@ enabel_user:
 
 ### Step 5: Create the js/sass configuration
 
-Copy the javascript/sass/configuration files:
-- `vendor/enabel/layout-bundle/assets/enabel.js` to `assets/enabel.js`
-- `vendor/enabel/layout-bundle/assets/scss/enabel.scss` to `assets/scss/enabel.scss`
-- `vendor/enabel/layout-bundle/assets/scss/error.scss` to `assets/scss/error.scss`
-- `vendor/enabel/layout-bundle/postcss.config.js` to `postcss.config.js`
-- `vendor/enabel/layout-bundle/.browserslistrc` to `.browserslistrc`
+Copy/replace the javascript/sass/configuration files:
+- `vendor/enabel/layout-bundle/assets/app.js` to `assets/app.js`
+- `vendor/enabel/layout-bundle/assets/styles/app.scss` to `assets/style/app.scss`
 
-### Step 6: JavaScript dependencies & webpack configuration
+### Step 6: Dependencies
 
-Install the JavaScript dependencies by running:
+Install the dependencies with AssetMapper by running the following commands:
+
+> [!NOTE]
+>
+> If you are not using Symfony CLI, replace symfony console with bin/console in the following commands.
 
 ```bash
-yarn add $(cat vendor/enabel/layout-bundle/requirements.txt)
-```
-
-Edit `webpack.config.js` and uncomment/add the following lines:
-
-```javascript
-Encore
-    // ...
-    .addEntry('enabel', './assets/enabel.js')
-    .addStyleEntry('error', './assets/scss/error.scss')
-    .enableSassLoader()
-    .enablePostCssLoader()    
+symfony console importmap:require @enabel/enabel-bootstrap-theme
+symfony console importmap:require @enabel/enabel-bootstrap-theme/dist/css/enabel-bootstrap-theme.min.css
+symfony console importmap:require @enabel/enabel-bootstrap-theme/dist/css/variables.min.css
+symfony console importmap:require @enabel/enabel-bootstrap-theme/dist/css/error.min.css
+symfony console importmap:require @enabel/enabel-bootstrap-theme/dist/js/enabel-bootstrap-theme.min
+symfony console importmap:require @fontsource-variable/maven-pro/index.min.css
 ```
 
 ### Step 7: Build assets
 
+> [!NOTE]
+>
+> If you are not using Symfony CLI, replace symfony console with bin/console in the following commands.
+
 ```bash
-yarn encore dev
+symfony console sass:build --watch
 ```
 
 </details>

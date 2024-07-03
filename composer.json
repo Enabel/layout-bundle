@@ -18,11 +18,12 @@
         "symfony/http-kernel": "^6.0|^7.0",
         "symfony/intl": "^6.0|^7.0",
         "symfony/routing": "^6.0|^7.0",
+        "symfony/runtime": "^6.0|^7.0",
         "symfony/translation": "^6.0|^7.0",
         "symfony/twig-bundle": "^6.0|^7.0",
         "symfony/ux-twig-component": "^2.7",
-        "symfony/webpack-encore-bundle": "^1.16",
         "symfony/yaml": "^6.0|^7.0",
+        "symfonycasts/sass-bundle": "^0.7.0",
         "twig/twig": "^3.4"
     },
     "require-dev": {
@@ -50,7 +51,7 @@
         "sort-packages": true,
         "allow-plugins": {
             "dealerdirect/phpcodesniffer-composer-installer": true,
-            "symfony/flex": true
+            "symfony/runtime": true
         }
     },
     "scripts": {
@@ -80,5 +81,10 @@
         "qa": "Run static analysis tools & test",
         "stan": "Run PHPStan",
         "test": "Run the PHPUnit tests"
+    },
+    "extra": {
+        "symfony": {
+            "allow-contrib": true
+        }
     }
 }
