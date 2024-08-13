@@ -1,8 +1,24 @@
 # Changelog
 
+## [2.0.1](https://github.com/enabel/layout-bundle/tree/2.0.1) (2024-08-13)
+
+[Full Changelog](https://github.com/enabel/layout-bundle/compare/2.0.0...2.0.1)
+
+**Merged pull requests:**
+
+- Feat/refactor lang switcher [\#7](https://github.com/Enabel/layout-bundle/pull/7) ([gerryvdm](https://github.com/gerryvdm))
+
 ## [2.0.0](https://github.com/enabel/layout-bundle/tree/2.0.0) (2024-07-03)
 
 [Full Changelog](https://github.com/enabel/layout-bundle/compare/1.0.21...2.0.0)
+
+**Merged pull requests:**
+
+- Release/2 [\#6](https://github.com/Enabel/layout-bundle/pull/6) ([falcohb](https://github.com/falcohb))
+
+## [1.0.22](https://github.com/enabel/layout-bundle/tree/1.0.22) (2024-08-13)
+
+[Full Changelog](https://github.com/enabel/layout-bundle/compare/1.0.21...1.0.22)
 
 ## [1.0.21](https://github.com/enabel/layout-bundle/tree/1.0.21) (2024-06-26)
 
