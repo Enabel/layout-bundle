@@ -86,6 +86,9 @@
     "extra": {
         "symfony": {
             "allow-contrib": true
+        },
+        "branch-alias": {
+            "dev-feat/refactor-lang-switcher": "1.0.x-dev"
         }
     }
 }
