@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Enabel\LayoutBundle\Components;
 
-use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\RequestStack;
+use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Symfony\UX\TwigComponent\Attribute\AsTwigComponent;
-use Symfony\UX\TwigComponent\Attribute\ExposeInTemplate;
-use Symfony\UX\TwigComponent\Attribute\PreMount;
 
 /**
  * @codeCoverageIgnore
@@ -15,52 +15,22 @@ use Symfony\UX\TwigComponent\Attribute\PreMount;
 #[AsTwigComponent('locale-switch', '@EnabelLayout/components/locale-switch.html.twig')]
 class LocaleSwitchComponent
 {
-    #[ExposeInTemplate]
-    private string $routeName = '';
-    #[ExposeInTemplate]
-    private bool $showName = true;
-
-    /**
-     * @param array<string, mixed> $data
-     *
-     * @return array<string, mixed>
-     */
-    #[PreMount]
-    public function preMount(array $data): array
+    public function __construct(private RequestStack $requestStack, private UrlGeneratorInterface $urlGenerator)
     {
-        // validate data
-        $resolver = new OptionsResolver();
-        $resolver->setDefaults(['routeName' => '']);
-        $resolver->setAllowedTypes('routeName', 'string');
-        $resolver->setDefaults(['showName' => true]);
-        $resolver->setAllowedTypes('showName', 'bool');
-
-        return $resolver->resolve($data);
     }
 
-    public function mount(string $routeName = '', bool $showName = true): void
+    public function switch(string $locale, int $referenceType = UrlGeneratorInterface::ABSOLUTE_PATH): string
     {
-        $this->setRouteName($routeName);
-        $this->setShowName($showName);
-    }
+        $request = $this->requestStack->getCurrentRequest();
 
-    public function getRouteName(): string
-    {
-        return $this->routeName;
-    }
+        if (!$request instanceof Request) {
+            throw new \RuntimeException('No request found.');
+        }
 
-    public function setRouteName(string $routeName): void
-    {
-        $this->routeName = $routeName;
-    }
+        $route = $request->attributes->get('_locale_switch_route', $request->attributes->get('_route'));
+        $params = $request->attributes->get('_locale_switch_params', $request->attributes->get('_route_params'));
+        $params['_locale'] = $locale;
 
-    public function isShowName(): bool
-    {
-        return $this->showName;
-    }
-
-    public function setShowName(bool $showName): void
-    {
-        $this->showName = $showName;
+        return $this->urlGenerator->generate($route, $params, $referenceType);
     }
 }
