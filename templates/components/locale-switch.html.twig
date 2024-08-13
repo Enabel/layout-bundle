@@ -3,21 +3,15 @@
     <a href="#" class="nav-link dropdown-toggle" id="dropdownLocales" data-bs-toggle="dropdown" aria-expanded="false">
         {% for locale in locales() %}
             {% if app.request.locale == locale.code %}
-                <i class="fi fi-{{ locale.icon }}" title="{{ locale.name|capitalize }}"></i>&nbsp;{% if showName %}{{ locale.name|capitalize }}{% endif %}
+                <i class="fi fi-{{ locale.icon }}" title="{{ locale.name | capitalize }}"></i>&nbsp;{{ locale.name | capitalize }}
             {% endif %}
         {% endfor %}
     </a>
     <ul class="dropdown-menu" aria-labelledby="dropdownLocales">
         {% for locale in locales() %}
-            {% if routeName is not empty %}
-                {% set route = path(app.request.get('_route', routeName), app.request.get('_route_params', [])|merge({_locale: locale.code})) %}
-            {% else %}
-                {% set route = path(app.request.get('_route'), app.request.get('_route_params', [])|merge({_locale: locale.code})) %}
-            {% endif %}
-
             {% if app.request.locale != locale.code %}
                 <li role="menuitem">
-                    <a class="dropdown-item" href="{{ route }}"><i class="fi fi-{{ locale.icon }}" title="{{ locale.name|capitalize }}"></i>&nbsp;{% if showName %}{{ locale.name|capitalize }}{% else %}{{ locale.code|upper }}{% endif %}</a>
+                    <a class="dropdown-item" href="{{ this.switch(locale.code) }}"><i class="fi fi-{{ locale.icon }}" title="{{ locale.name | capitalize }}"></i>&nbsp;{{ locale.name | capitalize }}</a>
                 </li>
             {% endif %}
         {% endfor %}
