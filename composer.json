@@ -21,7 +21,7 @@
         "symfony/translation": "^6.0|^7.0",
         "symfony/twig-bundle": "^6.0|^7.0",
         "symfony/ux-twig-component": "^2.7",
-        "symfony/webpack-encore-bundle": "^2.0",
+        "symfony/webpack-encore-bundle": "^1.0|^2.0",
         "symfony/yaml": "^6.0|^7.0",
         "twig/twig": "^3.4"
     },
