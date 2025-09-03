@@ -15,11 +15,11 @@ class UserMenuComponent
     private string $loginRoute;
     private string $logoutRoute;
     /**
-     * @var array{}|array{int, array{
+     * @var array<int, array{
      *     icon: string,
      *     label: string,
      *     url: string
-     * }}
+     * }>
      */
     private array $actions;
 
@@ -44,11 +44,11 @@ class UserMenuComponent
     }
 
     /**
-     * @param array{}|array{int, array{
+     * @param array<int, array{
      *     icon: string,
      *     label: string,
      *     url: string
-     * }} $actions
+     * }> $actions
      */
     public function mount(string $loginRoute = '', string $logoutRoute = '', array $actions = []): void
     {
@@ -70,11 +70,11 @@ class UserMenuComponent
     }
 
     /**
-     * @return array{}|array{int, array{
+     * @return array<int, array{
      *     icon: string,
      *     label: string,
      *     url: string
-     * }}
+     * }>
      */
     #[ExposeInTemplate]
     public function getActions(): array

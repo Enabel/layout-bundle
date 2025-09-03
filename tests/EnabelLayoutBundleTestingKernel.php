@@ -44,13 +44,14 @@ class EnabelLayoutBundleTestingKernel extends Kernel
 
         $container->extension('framework', [
             'secret' => 'S3CRET',
-            'test'   => true,
+            'test' => true,
             'http_method_override' => false,
             'handle_all_throwables' => true,
             'php_errors' => [
                 'log' => true,
                 'throw' => true,
             ],
+            'property_info' => ['with_constructor_extractor' => false]
         ]);
         $container->services()->set('logger', NullLogger::class);
     }
@@ -58,6 +59,6 @@ class EnabelLayoutBundleTestingKernel extends Kernel
     private function configureRoutes(RoutingConfigurator $routes): void
     {
         $routes->import(__DIR__ . '/../config/routes.yaml');
-        $routes->add('homepage', 'https://google.be');
+        $routes->add('app_home', 'https://google.be');
     }
 }

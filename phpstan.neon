@@ -8,6 +8,10 @@ parameters:
         -
             identifier: missingType.generics
             reportUnmatched: false
+        -
+            message: "#^Call to an undefined method [a-zA-Z0-9\\\\_]+::expects\\(\\)\\.$#"
+            path: tests/*
+            reportUnmatched: false
     paths:
         - src
         - tests

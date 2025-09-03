@@ -21,11 +21,22 @@ class LocaleSwitchComponent
         $request = $this->requestStack->getCurrentRequest();
 
         if (!$request instanceof Request) {
-            throw new \RuntimeException('No request found in RequestStack when trying to switch locale. Make sure you are calling this from a request context.');
+            $message = 'No request found in RequestStack when trying to switch locale.';
+            $message .= ' Make sure you are calling this from a request context.';
+            throw new \RuntimeException($message);
         }
 
         $route = $request->attributes->get('_locale_switch_route', $request->attributes->get('_route'));
         $params = $request->attributes->get('_locale_switch_params', $request->attributes->get('_route_params'));
+
+        if (!is_string($route)) {
+            throw new \RuntimeException('No route found for locale switching.');
+        }
+
+        if (!is_array($params)) {
+            $params = [];
+        }
+
         $params['_locale'] = $locale;
 
         return $this->urlGenerator->generate($route, $params, $referenceType);

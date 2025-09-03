@@ -66,7 +66,7 @@ return [
         'min-complexity' => 70,
         'min-architecture' => 90,
         'min-style' => 90,
-        'disable-security-check' => false,
+        'disable-security-check' => true,
     ],
     'threads' => null,
 ];

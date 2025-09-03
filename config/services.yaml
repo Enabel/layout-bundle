@@ -33,3 +33,6 @@ services:
     arguments:
       $supportedLocales: '%enabel_layout.supported_locales%'
     tags: [ 'twig.extension' ]
+
+  Symfony\Component\Asset\PackageInterface:
+    alias: 'asset_mapper.asset_package'
