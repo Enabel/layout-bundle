@@ -9,9 +9,6 @@ use Symfony\UX\TwigComponent\Attribute\AsTwigComponent;
 use Symfony\UX\TwigComponent\Attribute\ExposeInTemplate;
 use Symfony\UX\TwigComponent\Attribute\PreMount;
 
-/**
- * @codeCoverageIgnore
- */
 #[AsTwigComponent('alert', '@EnabelLayout/components/alert.html.twig')]
 class AlertComponent
 {

@@ -9,9 +9,6 @@ use Symfony\UX\TwigComponent\Attribute\AsTwigComponent;
 use Symfony\UX\TwigComponent\Attribute\ExposeInTemplate;
 use Symfony\UX\TwigComponent\Attribute\PreMount;
 
-/**
- * @codeCoverageIgnore
- */
 #[AsTwigComponent('user-menu', '@EnabelLayout/components/user-menu.html.twig')]
 class UserMenuComponent
 {
@@ -39,7 +36,7 @@ class UserMenuComponent
         $resolver->setDefaults(['loginRoute' => '']);
         $resolver->setAllowedTypes('loginRoute', 'string');
         $resolver->setDefaults(['logoutRoute' => '']);
-        $resolver->setAllowedTypes('loginRoute', 'string');
+        $resolver->setAllowedTypes('logoutRoute', 'string');
         $resolver->setDefaults(['actions' => []]);
         $resolver->setAllowedTypes('actions', 'array');
 

@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.0.3](https://github.com/enabel/layout-bundle/tree/2.0.3) (2025-09-03)
+
+[Full Changelog](https://github.com/enabel/layout-bundle/compare/2.0.2...2.0.3)
+
+**Improvements:**
+
+- Enhanced test coverage by adding unit tests for all Twig components
+- Improved error message for locale switching when no request is available
+- Expanded README with more detailed features and compatibility information
+- Fixed inconsistency in UserMenuComponent OptionsResolver validation
+- Renamed BroswerconfigAction.php to BrowserconfigAction.php (fixed typo)
+
 ## [2.0.2](https://github.com/enabel/layout-bundle/tree/2.0.2) (2024-11-18)
 
 [Full Changelog](https://github.com/enabel/layout-bundle/compare/2.0.1...2.0.2)

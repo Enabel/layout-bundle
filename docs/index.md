@@ -75,17 +75,7 @@ import '@enabel/enabel-bootstrap-theme/dist/css/variables.min.css'
 import '@enabel/enabel-bootstrap-theme/dist/css/error.min.css'
 import '@enabel/enabel-bootstrap-theme/dist/js/enabel-bootstrap-theme.min'
 import '@fontsource-variable/maven-pro/index.min.css';
-import './styles/app.scss';
-```
-
-### Step 3: Build assets
-
-> [!NOTE]
->
-> If you are not using Symfony CLI, replace symfony console with bin/console in the following commands.
-
-```bash
-symfony console sass:build --watch
+import './styles/app.css';
 ```
 
 </details>
@@ -147,7 +137,7 @@ enabel_user:
 
 Copy/replace the javascript/sass/configuration files:
 - `vendor/enabel/layout-bundle/assets/app.js` to `assets/app.js`
-- `vendor/enabel/layout-bundle/assets/styles/app.scss` to `assets/style/app.scss`
+- `vendor/enabel/layout-bundle/assets/styles/app.css` to `assets/style/app.css`
 
 ### Step 6: Dependencies
 
@@ -164,16 +154,6 @@ symfony console importmap:require @enabel/enabel-bootstrap-theme/dist/css/variab
 symfony console importmap:require @enabel/enabel-bootstrap-theme/dist/css/error.min.css
 symfony console importmap:require @enabel/enabel-bootstrap-theme/dist/js/enabel-bootstrap-theme.min
 symfony console importmap:require @fontsource-variable/maven-pro/index.min.css
-```
-
-### Step 7: Build assets
-
-> [!NOTE]
->
-> If you are not using Symfony CLI, replace symfony console with bin/console in the following commands.
-
-```bash
-symfony console sass:build --watch
 ```
 
 </details>

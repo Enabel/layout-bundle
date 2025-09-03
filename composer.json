@@ -24,7 +24,6 @@
         "symfony/twig-bundle": "^6.0|^7.0",
         "symfony/ux-twig-component": "^2.7",
         "symfony/yaml": "^6.0|^7.0",
-        "symfonycasts/sass-bundle": "^0.7.0",
         "twig/twig": "^3.4"
     },
     "require-dev": {

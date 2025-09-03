@@ -7,15 +7,33 @@
 
 ## Introduction
 
-The bundle aims to provide basics layout and helper, including:
+The bundle aims to provide basic layout and helpers for Symfony applications, including:
 
-- SASS Themes
-- Enabel logo
-- ...
+- Responsive Bootstrap 5 layout with Enabel styling
+- Configurable Twig Components:
+  - Alert messages with different types (success, danger, error, warning, info)
+  - Theme switcher (light/dark mode)
+  - Locale switcher for multilingual applications
+  - User menu with customizable actions
+- Favicon configuration and management
+- Error page templates
+- Email templates
+- CSS theming based on Enabel's design system
 
-## Installation & usage
+## Key Features
 
-You can check docs [here](docs/index.md)
+- **Responsive Layout System**: Pre-configured Bootstrap 5 layout with Enabel branding
+- **Twig Components**: Ready-to-use UI components with minimal configuration
+- **Theme Support**: Built-in light/dark mode switching
+- **Internationalization**: Easy locale switching for multilingual applications
+- **Accessibility**: Components designed with accessibility in mind
+- **User Interface**: User menu and authentication integration
+- **Customization**: Configurable application name, description, and supported locales
+- **Modern Frontend**: Uses AssetMapper for efficient asset management
+
+## Installation & Usage
+
+Full installation and usage documentation is available [here](docs/index.md)
 
 Using Symfony Flex, don't forget to add the recipes endpoint:
 
@@ -33,12 +51,20 @@ Using Symfony Flex, don't forget to add the recipes endpoint:
 }
 ```
 
-## Versions & dependencies
+## Requirements & Compatibility
 
-The current version of the bundle works with Symfony 6.0+.
-The project follows SemVer.
+- PHP: 8.0 or higher
+- Symfony: 6.0+ and 7.0+ supported
+- Twig: 3.4+
+- Symfony UX Twig Component: 2.7+
 
-You can check the [changelog](CHANGELOG.md).
+The bundle uses AssetMapper for asset management and requires some packages:
+- `@enabel/enabel-bootstrap-theme`: For Enabel's Bootstrap theme
+- `@fontsource-variable/maven-pro`: For the Maven Pro font
+
+The project follows [Semantic Versioning](https://semver.org/).
+
+You can check the [changelog](CHANGELOG.md) for version history and updates.
 
 ## Contributing
 
