@@ -5,6 +5,12 @@
 [![codecov](https://codecov.io/gh/Enabel/layout-bundle/graph/badge.svg?token=jlik2vBpeu)](https://codecov.io/gh/Enabel/layout-bundle)
 [![CI](https://github.com/Enabel/layout-bundle/actions/workflows/CI.yml/badge.svg)](https://github.com/Enabel/layout-bundle/actions/workflows/CI.yml)
 
+> **⚠️ Deprecation Notice**
+>
+> This project is deprecated and no longer maintained.  
+> Use the recommended alternative:  
+> [Enabel UX](https://github.com/enabel/ux)
+
 ## Introduction
 
 The bundle aims to provide basic layout and helpers for Symfony applications, including:
