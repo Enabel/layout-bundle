@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="description" content="Enabel Symfony Layout" />
+      <link rel="shortcut icon" href="img/favicon.ico" />
+    <title>enabel/layout-bundle</title>
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Installation";
+        var mkdocs_page_input_path = "index.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="." class="icon icon-home"> enabel/layout-bundle
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Installation</a>
+    <ul class="current">
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="" href="https://github.com/Enabel/layout-bundle/issues">Bug tracker</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href=".">enabel/layout-bundle</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Installation</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/Enabel/layout-bundle/edit/main/docs/index.md">Edit on enabel/layout-bundle</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="installation">Installation</h1>
+<p>Make sure Composer is installed globally, as explained in the
+<a href="https://getcomposer.org/doc/00-intro.md">installation chapter</a>
+of the Composer documentation.</p>
+<details>
+  <summary>Applications that use Symfony Flex</summary>
+
+## Applications that use Symfony Flex
+
+### Step 0: Add our recipes endpoint
+
+Add this in your composer.json:
+
+
+<pre><code class="language-json">{
+  &quot;extra&quot;: {
+    &quot;symfony&quot;: {
+      &quot;endpoint&quot;: [
+        &quot;https://api.github.com/repos/Enabel/recipes/contents/index.json?ref=flex/main&quot;,
+        &quot;flex://defaults&quot;
+      ],
+      &quot;allow-contrib&quot;: true
+    }
+  }
+}
+</code></pre>
+
+**Don't forget to run `compose update` as you have just modified his configuration.**
+
+### Step 1: Download the Bundle
+
+Open a command console, enter your project directory and execute:
+
+
+<pre><code class="language-bash">composer require enabel/layout-bundle
+</code></pre>
+
+
+### Step 2: Dependencies & configuration
+
+Install the dependencies with AssetMapper by running the following commands:
+
+> [!NOTE]
+> 
+> If you are not using Symfony CLI, replace symfony console with bin/console in the following commands.
+
+
+
+<pre><code class="language-bash">symfony console importmap:require @enabel/enabel-bootstrap-theme
+symfony console importmap:require @enabel/enabel-bootstrap-theme/dist/css/enabel-bootstrap-theme.min.css
+symfony console importmap:require @enabel/enabel-bootstrap-theme/dist/css/variables.min.css
+symfony console importmap:require @enabel/enabel-bootstrap-theme/dist/css/error.min.css
+symfony console importmap:require @enabel/enabel-bootstrap-theme/dist/js/enabel-bootstrap-theme.min
+symfony console importmap:require @fontsource-variable/maven-pro/index.min.css
+</code></pre>
+
+
+Edit `assets/app.js` and remove the content above the instruction:
+
+
+<pre><code class="language-javascript">import './bootstrap.js';
+/*
+ * Welcome to your app's main JavaScript file!
+ *
+ * This file will be included onto the page via the importmap() Twig function,
+ * which should already be in your base.html.twig.
+ */
+import './styles/app.css';
+
+console.log('This log comes from assets/app.js - welcome to AssetMapper! 🎉');
+
+/** Remove content above this line */
+import './bootstrap.js';
+import '@enabel/enabel-bootstrap-theme/dist/css/enabel-bootstrap-theme.min.css'
+import '@enabel/enabel-bootstrap-theme/dist/css/variables.min.css'
+import '@enabel/enabel-bootstrap-theme/dist/css/error.min.css'
+import '@enabel/enabel-bootstrap-theme/dist/js/enabel-bootstrap-theme.min'
+import '@fontsource-variable/maven-pro/index.min.css';
+import './styles/app.css';
+</code></pre>
+
+
+</details>
+
+<details>
+  <summary>Applications that don't use Symfony Flex</summary>
+
+## Applications that don't use Symfony Flex
+
+### Step 1: Download the Bundle
+
+Open a command console, enter your project directory and execute the
+following command to download the latest stable version of this bundle:
+
+
+<pre><code class="language-bash">composer require enabel/layout-bundle
+</code></pre>
+
+
+### Step 2: Enable the Bundle
+
+Then, enable the bundle by adding it to the list of registered bundles
+in the `config/bundles.php` file of your project:
+
+
+<pre><code class="language-php">// config/bundles.php
+
+return [
+    // ...
+    Enabel\LayoutBundle\EnabelLayoutBundle::class =&gt; ['all' =&gt; true],
+];
+</code></pre>
+
+
+### Step 3: Configure the Bundle
+
+Create a configuration file `config/packages/enabel_layout.yaml` with the following configuration:
+
+<pre><code class="language-yaml"># config/packages/enabel_layout.yaml
+
+enabel_layout:
+  application_name: Symfony Application
+  application_short_name: SfApp
+  application_description: Another Symfony application made by Enabel
+  supported_locales: 'fr|en'
+</code></pre>
+
+
+### Step 4: Import routing configuration
+
+enable the routes by adding it to the list of registered routes
+in the `config/routes.yaml` file of your project:
+
+
+<pre><code class="language-yaml"># config/routes.yaml
+
+enabel_user:
+  resource: &quot;@EnabelLayoutBundle/config/routes.yaml&quot;
+</code></pre>
+
+
+### Step 5: Create the js/sass configuration
+
+Copy/replace the javascript/sass/configuration files:
+- `vendor/enabel/layout-bundle/assets/app.js` to `assets/app.js`
+- `vendor/enabel/layout-bundle/assets/styles/app.css` to `assets/style/app.css`
+
+### Step 6: Dependencies
+
+Install the dependencies with AssetMapper by running the following commands:
+
+> [!NOTE]
+>
+> If you are not using Symfony CLI, replace symfony console with bin/console in the following commands.
+
+
+<pre><code class="language-bash">symfony console importmap:require @enabel/enabel-bootstrap-theme
+symfony console importmap:require @enabel/enabel-bootstrap-theme/dist/css/enabel-bootstrap-theme.min.css
+symfony console importmap:require @enabel/enabel-bootstrap-theme/dist/css/variables.min.css
+symfony console importmap:require @enabel/enabel-bootstrap-theme/dist/css/error.min.css
+symfony console importmap:require @enabel/enabel-bootstrap-theme/dist/js/enabel-bootstrap-theme.min
+symfony console importmap:require @fontsource-variable/maven-pro/index.min.css
+</code></pre>
+
+
+</details>
+
+<h1 id="usage">Usage</h1>
+<h2 id="extends-the-enabel-layout">Extends the Enabel layout</h2>
+<p>In your base template <code>templates/base.html.twig</code>:</p>
+<pre><code class="language-twig">{% extends '@EnabelLayout/layout/bs5/base.html.twig' %}
+</code></pre>
+<h2 id="override-the-navbar-menu">Override the navbar menu</h2>
+<p>You need to override the <code>menu</code> block in your base template <code>templates/base.html.twig</code>:</p>
+<pre><code class="language-twig">{% extends '@EnabelLayout/layout/bs5/base.html.twig' %}
+
+{# Override the menu block #}
+{% block menu %}
+    {# Left side #}
+    &lt;ul class=&quot;navbar-nav me-auto mb-2 mb-md-0&quot;&gt;
+        {# Main Menu #}
+        &lt;li class=&quot;nav-item&quot;&gt;
+            &lt;a class=&quot;nav-link&quot; href=&quot;{{ path('app_home') }}&quot;&gt;&lt;i class=&quot;fas fa-home&quot;&gt;&lt;/i&gt; Home&lt;/a&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+
+    {# Right side #}
+    &lt;ul class=&quot;navbar-nav mb-2 mb-md-0&quot;&gt;
+        {# Theme &amp; Locale Switch #}
+        {{ component('theme-switch') }}
+        {{ component('locale-switch') }}
+
+        {# User Menu #}
+        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+            &lt;li class=&quot;nav-item dropdown&quot;&gt;
+                &lt;a class=&quot;nav-link dropdown-toggle&quot; href=&quot;#&quot; id=&quot;userMenu&quot; role=&quot;button&quot; data-bs-toggle=&quot;dropdown&quot; aria-expanded=&quot;false&quot;&gt;
+                    &lt;i class=&quot;fas fa-user&quot;&gt;&lt;/i&gt; {{ app.user.displayName }}
+                &lt;/a&gt;
+                &lt;ul class=&quot;dropdown-menu dropdown-menu-end&quot; aria-labelledby=&quot;userMenu&quot;&gt;
+                    &lt;li&gt;&lt;a class=&quot;dropdown-item&quot; href=&quot;{{ path('enabel_logout') }}&quot;&gt;&lt;i class=&quot;fas fa-sign-out-alt&quot;&gt;&lt;/i&gt; Logout&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/li&gt;
+        {% else %}
+            &lt;li class=&quot;nav-item&quot;&gt;
+                &lt;a class=&quot;nav-link&quot; href=&quot;{{ path('enabel_login') }}&quot;&gt;&lt;i class=&quot;fas fa-sign-in-alt&quot;&gt;&lt;/i&gt; Login&lt;/a&gt;
+            &lt;/li&gt;
+        {% endif %}
+
+    &lt;/ul&gt;
+{% endblock %}
+</code></pre>
+<h2 id="our-twig-components">Our twig components</h2>
+<h3 id="alert-messages">Alert messages</h3>
+<p>Show an alert message with a content and style, by default the style is <code>success</code>.</p>
+<pre><code class="language-twig">    {{ component('alert', {message: 'Content of the message'}) }}
+</code></pre>
+<p>You can change the style by passing the <code>alertType</code> option:</p>
+<pre><code class="language-twig">    {{ component('alert', {alertType: 'error', message: 'Content of the error message'}) }}
+    {{ component('alert', {alertType: 'info', message: 'Content of the info message'}) }}
+    {{ component('alert', {alertType: 'warning', message: 'Content of the warning message'}) }}
+    {{ component('alert', {alertType: 'success', message: 'Content of the success message'}) }}
+    {{ component('alert', {alertType: 'danger', message: 'Content of the danger message'}) }}
+</code></pre>
+<h3 id="theme-switch-in-navbar">Theme switch in navbar</h3>
+<p>Show a theme switcher to choose between light and dark theme</p>
+<pre><code class="language-twig">    {{ component('theme-switch') }}
+</code></pre>
+<h3 id="language-switch-in-navbar">Language switch in navbar</h3>
+<p>By default, the language switcher will display the language name in the current locale and redirect to the current route.</p>
+<pre><code class="language-twig">    {{ component('locale-switch') }}
+</code></pre>
+<p>You can change the route name and/or hide the language name by passing options:</p>
+<pre><code class="language-twig">    {{ component('locale-switch', {routeName: 'homepage'}) }}
+    {{ component('locale-switch', {routeName: 'homepage', showName: false}) }}
+</code></pre>
+<h3 id="theme-switch-in-navbar_1">Theme switch in navbar</h3>
+<p>Show a theme switcher to choose between light and dark theme</p>
+<pre><code class="language-twig">    {{ component('theme-switch') }}
+</code></pre>
+<h3 id="user-menu-in-navbar">User menu in navbar</h3>
+<p>By default, the user menu will display the user and a logout link if the user is authenticated, and a login link if not.
+Login and logout routes are required.</p>
+<pre><code class="language-twig">    {{ component('user-menu', {loginRoute: 'enabel_login', logoutRoute: 'enabel_logout'}) }}
+</code></pre>
+<p>You can add some actions to the user menu by passing an array of actions:</p>
+<pre><code class="language-twig">    {{ component('user-menu', {
+            loginRoute: 'enabel_login',
+            logoutRoute: 'enabel_logout',
+            actions: [
+                {
+                    icon: 'id-card',
+                    label: 'app.menu.profile'|trans,
+                    url: path('app_user_profile')
+                },
+                {
+                    icon: 'screwdriver-wrench',
+                    label: 'app.menu.admin'|trans,
+                    url: path('admin')
+                }
+            ]
+    }) }}
+</code></pre>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/Enabel/layout-bundle" class="fa fa-code-fork" style="color: #fcfcfc"> enabel/layout-bundle</a>
+        </span>
+    
+    
+    
+  </span>
+</div>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = ".";</script>
+    <script src="js/theme_extra.js"></script>
+    <script src="js/theme.js"></script>
+      <script src="search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
+
+<!--
+MkDocs version : 1.6.1
+Build Date UTC : 2025-11-19 13:07:25.892831+00:00
+-->
